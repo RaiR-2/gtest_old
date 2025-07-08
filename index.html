@@ -5,7 +5,15 @@
     <title>ГЕЙ-ТЕСТ</title>
     <style>
         body { margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #333; }
-        canvas { border: 1px solid #ccc; background-color: #000; cursor: pointer; }
+        #animationVideo { 
+            border: 1px solid #ccc; 
+            background-color: #000; 
+            cursor: pointer; 
+            /* Видео будет автоматически подстраиваться под размеры оригинала */
+            /* Чтобы видео не вылезало за границы, если оно больше экрана */
+            max-width: 100vw;
+            max-height: 100vh;
+        }
         #initialScreen {
             position: absolute;
             top: 0;
@@ -39,8 +47,7 @@
         <h1>Нажмите, чтобы начать тест</h1>
         <button id="startButton">Начать</button>
     </div>
-    <canvas id="gameCanvas"></canvas>
-
+    <video id="animationVideo" src="animation.mp4" preload="auto" muted></video>
     <script src="main.js"></script>
 </body>
 </html>
